@@ -2,28 +2,15 @@ import React from 'react';
 import './App.css';
 import './components/TodoItem';
 import TodoItem from './components/TodoItem';
+import taskData from './tasks';
 
 function App() {
   return (
     <div className="todo-list">
-      <TodoItem/>
-      <TodoItem/>
-      <TodoItem/>
-      <TodoItem/>
+      {taskData.map(task => <TodoItem item={task}/>)}
     </div>
   );
 }
-
-/*const App = () => {
-  return (
-    <div className="App">
-      <input type="checkbox"></input><p>Todo item1</p>
-      <input type="checkbox"></input><p>Todo item2</p>
-      <input type="checkbox"></input><p>Todo item3</p>
-      <input type="checkbox"></input><p>Todo item4</p>
-    </div>
-  );
-}*/
 
 /*function App() {
   const date = new Date()
