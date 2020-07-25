@@ -13,12 +13,17 @@ function TodoItem(props) {
 
 // class component
 class TodoItem extends React.Component {
+  constructor() {
+    super()
+    this.state = {}
+  }
+
   render() {
-    const props = this.props
+    this.state.item = this.props.item
     return (
         <div className="todo-item">
-          <input type="checkbox" checked={props.item.completed}></input>
-          <p>{props.item.name}</p>
+          <input type="checkbox" checked={this.state.item.completed}></input>
+          <p>{this.state.item.name}</p>
         </div>
     );
   }
