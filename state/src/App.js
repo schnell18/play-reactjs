@@ -19,7 +19,7 @@ import './App.css';
   }
 }*/
 
-class App extends Component {
+/* class App extends Component {
   constructor() {
     super()
     this.state = {}
@@ -33,6 +33,69 @@ class App extends Component {
       </div>
     );
   }
+}*/
+
+/* class App extends Component {
+
+  render() {
+    return (
+      <div className="App">
+        <img
+          src="https://www.fillmurray.com/200/100"
+          alt="Something"
+          onMouseEnter={() => console.log("Mouse Entered")}
+          onMouseLeave={() => console.log("Mouse Left")}
+        />
+        <br />
+        <br />
+        <button onClick={() => console.log("I was clicked!")} >Click me</button>
+      </div>
+    );
+  }
+
+  // <button onClick={function() {console.log("I was clicked!")}}>Click me</button>
+} */
+
+class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      count: 1
+    }
+    this.handleClick = this.handleClick.bind(this)
+    this.handleDouble = this.handleDouble.bind(this)
+    this.handleReset = this.handleReset.bind(this)
+  }
+
+  handleClick() {
+    this.setState(pre => {
+      return { count: pre.count + 1}
+    })
+  }
+
+  handleDouble() {
+    this.setState(pre => {
+      return { count: pre.count * 2}
+    })
+  }
+
+  handleReset() {
+    this.setState({ count: 1})
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>{this.state.count}</h1>
+        <button onClick={this.handleClick} >PlusOne</button>
+        <button onClick={this.handleDouble} >Double</button>
+        <button onClick={this.handleReset} >Reset</button>
+      </div>
+    );
+  }
+
+  // <button onClick={function() {console.log("I was clicked!")}}>Click me</button>
 }
 
 export default App;
