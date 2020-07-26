@@ -101,8 +101,7 @@ function FormComponent(props) {
           <button>Submit</button>
         </form>
         <h1>Entered information</h1>
-        <p>Your are: {props.data.firstName} {props.data.lastName}</p>
-        <p>Gender: {props.data.gender} </p>
+        <p>Your are: {props.data.gender === 'male' ? 'Mr.' : "Ms."} {props.data.firstName} {props.data.lastName}</p>
         <p>Age: {props.data.age} </p>
         <p>Destination: {props.data.destination} </p>
         <p>

@@ -2,21 +2,18 @@ import React, { Component } from 'react';
 import FormComponent from '../components/FormComponent';
 
 class Form extends Component {
-  constructor() {
-    super()
-    this.state = {
-      firstName: "",
-      lastName: "",
-      age: 0,
-      gender: "male",
-      destination: "",
-      dietaryRestriction: {
-        isVegan: false,
-        isKosher: false,
-        isLactoseFree: false,
-      }
-    }
 
+  state = {
+    firstName: "",
+    lastName: "",
+    age: 0,
+    gender: "male",
+    destination: "",
+    dietaryRestriction: {
+      isVegan: false,
+      isKosher: false,
+      isLactoseFree: false,
+    }
   }
 
   handleSubmit = event => {
