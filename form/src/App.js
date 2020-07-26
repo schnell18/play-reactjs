@@ -13,6 +13,7 @@ class App extends Component {
       bio: "",
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
 /*  handleChange(event) {
@@ -35,10 +36,14 @@ class App extends Component {
     })
   }
 
+  handleSubmit() {
+    console.log("To be implemented!")
+  }
+
   render() {
     return (
       <div className="App">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             name="firstName"
             value={this.state.firstName}
@@ -102,6 +107,8 @@ class App extends Component {
               <option value="yellow">Yellow</option>
             </select>
           </label>
+          <br/>
+          <button>Submit</button>
         </form>
         <h1>{this.state.firstName} {this.state.lastName}</h1>
         <h2>You are a {this.state.gender}</h2>
