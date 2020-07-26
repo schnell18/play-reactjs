@@ -17,16 +17,14 @@ class Form extends Component {
       }
     }
 
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleChange = this.handleChange.bind(this)
   }
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault()
     console.log("To be implemented")
   }
 
-  handleChange(event) {
+  handleChange = event => {
     const {name, value, type, checked} = event.target
     if (type === 'checkbox') {
       this.setState(pre => {
