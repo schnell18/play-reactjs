@@ -56,7 +56,7 @@ import './App.css';
   // <button onClick={function() {console.log("I was clicked!")}}>Click me</button>
 } */
 
-class App extends Component {
+/*class App extends Component {
 
   constructor() {
     super()
@@ -96,6 +96,38 @@ class App extends Component {
   }
 
   // <button onClick={function() {console.log("I was clicked!")}}>Click me</button>
+}*/
+
+class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      loading: false,
+      data: {}
+    }
+  }
+
+  componentDidMount() {
+    this.setState({ loading: true})
+    fetch("https://api.duckduckgo.com/?q=valley+forge+national+park&format=json")
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          loading: false,
+          data: data
+        })
+      })
+  }
+
+  render() {
+    const text = this.state.loading ? "Loading..." : this.state.data.Abstract
+    return (
+      <div className="App">
+        {text}
+      </div>
+    );
+  }
 }
 
 export default App;
