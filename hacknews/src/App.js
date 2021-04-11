@@ -19,12 +19,20 @@ const list = [
     objectId: 1,
   },
 ];
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: list
+    };
+  }
+
   render() {
     return (
       <div className="App">
         {
-          list.map(item =>
+          this.state.items.map(item =>
             <div key={item.objectId}>
               <span>
                 <a href={item.url}>{item.title}</a>
